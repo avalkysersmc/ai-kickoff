@@ -402,3 +402,6 @@ FodyWeavers.xsd
 
 # Python virtual environments
 .venv/
+
+# First let's ignore default chainlit configs
+.chainlit/

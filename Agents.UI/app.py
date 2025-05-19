@@ -1,15 +1,11 @@
-import logging
-import time
+import chainlit as cl
 
-logger = logging.getLogger(__name__)
+@cl.on_message
+async def main(message: cl.Message):
+    # Your custom logic goes here...
 
-def main():
-    logging.basicConfig(level=logging.DEBUG)
-    logger.debug('Hello, World!')
-
-    while True:
-        logger.debug("This prints once every 5 seconds.")
-        time.sleep(5)
-
-if __name__ == '__main__':
-    main()
+    # Send a response back to the user
+    await cl.Message(
+        content=f"Received: {message.content}",
+    ).send()
+    
